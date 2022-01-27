@@ -1,0 +1,222 @@
+.knowledges {
+  .knowledgesContent {
+    min-height: $minHeight;
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+    display: grid;
+    grid-template-columns: 40% 30% 30%;
+    grid-template-rows: 1fr 23% 1fr;
+    grid-template-areas: 
+      "L E E"
+      "L O O"
+      "S S H";
+    h3 {
+      font-size: 1.4rem;
+      margin-bottom: .5rem;
+      font-family: $font-2;
+      color: $color-3;
+      text-transform: uppercase;
+    }
+    .languagesFrameworks, .softSkills, .experience, .otherSkills, .hobbies {
+      background: $color-1;
+      border-radius: $borderRadius;
+      padding: .8rem;
+    }
+    .languagesFrameworks{
+      grid-area: L;
+      .languagesGrid {
+        height: fit-content;
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr;
+        grid-template-areas: 
+          "L"
+          "F";
+        .languageDisplay {
+          grid-area: L;
+        }
+        .frameworkDisplay {
+          grid-area: F;
+          h3 {
+            margin-top: 15px;
+          }
+          .years {
+            span {
+              &:nth-child(2):before,
+              &:nth-child(3):before,
+              &:nth-child(4):before,
+              &:nth-child(5):before,
+              &:nth-child(6):before, 
+              &:nth-child(7):before {
+                content:'';
+                height: 210px;
+              }
+            }
+          }
+        }
+        .years {
+          font-size: .65rem;
+          display: grid;
+          grid-template-columns: 22% 1fr 1fr 1fr 1fr 1fr 1fr;
+          color: $white;
+          span {
+            text-align: left;
+            &:nth-child(2):before,
+            &:nth-child(3):before,
+            &:nth-child(4):before,
+            &:nth-child(5):before,
+            &:nth-child(6):before, 
+            &:nth-child(7):before {
+              content:'';
+              background: rgba(180, 179, 179, 0.507);
+              position: absolute;
+              height: 210px;
+              width: 1px;
+              transform: translate(2px, 19px);
+            }
+          }
+        }
+        .languagesList {
+          padding-top: .5rem;  
+          li {
+            color: $color-2;
+          }
+          .progressBar {
+            height: .4rem;
+            background: transparent;
+            border-radius: 50px;
+            margin-top: 0.2rem;
+            position: relative;
+            left: 22.8%;
+            transform: translateY(-250%);
+            &:after {
+              content: '';
+              position: absolute;
+              background: $color-5;
+              border: solid 1px rgba($color-1,0.3);
+              border-radius: 50px;
+              height: .4rem;
+              width: 0;
+              animation: line 2s ease-out forwards;
+              @keyframes line {
+                to {
+                  width: 64%;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+    .experience {
+      grid-area: E;
+      margin: 0 0 .5rem .5rem;
+      display: grid;
+      grid-template-columns: 1fr;
+      grid-template-rows: 10% 1fr 1fr;
+      grid-template-areas: 
+        "1"
+        "2"
+        "3";
+      
+      h3 {
+        grid-area: 1;
+      }
+      h4 {
+        font-size: 1.1rem;
+        color: $color-5;
+      }
+      h5 {
+        color: $color-3;
+        padding: 0.5rem 0 0.5rem 1rem;
+      }
+      p {
+        text-align: justify;
+        padding: 0 1rem;
+        color: rgba($white,0.7);
+      }
+      .exp-1 {
+        grid-area: 2;
+      }
+      .exp-2 {
+        padding-top: 10px;
+        grid-area: 3;
+      }
+    }
+    .otherSkills {
+      grid-area: O;
+      margin-left: .5rem;
+      .list {
+        display: flex;
+        height: 100%;
+        justify-content: space-between;
+        font-family: $font-1;
+        color: $color-2;
+        font-size: 1rem;
+        ul {
+          height: 80%;
+          display: grid;
+          li{
+            padding-top: 10px;
+          }
+
+          i {
+            color: $color-5;
+            padding-right: 10px;
+          }
+        }
+      }
+    }
+  }
+}
+@media screen and (max-width: 950px){
+  .knowledgesContent {
+    h3 {
+      font-size: 1.2rem !important;
+    }
+    .languagesList {
+      padding-top: .2rem !important;
+    }
+    p {
+      font-size: .8rem;
+    }
+    .otherSkills, .hobbies {
+      font-size: .8rem;
+    }
+  }
+}
+@media screen and (max-width: 850px){
+  .knowledgesContent {
+    h4 {
+      font-size: .9rem !important;
+    }
+    h5 {
+      font-size: .6rem !important;
+      padding: .2rem 1rem !important;
+    }
+  }
+}
+@media screen and (max-width: 500px){
+  .knowledgesContent {
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+    grid-template-rows: 1fr 1fr 180px 180px !important;
+    
+    .languages {
+      grid-area: 1 !important;
+    }
+    .experience {
+      grid-area: 2 !important;
+      margin-left: 0 !important;
+    }
+    .otherSkills {
+      grid-area: 3 !important;
+      margin-right: 0 !important;
+    }
+    .hobbies {
+      grid-area: 4 !important;
+      margin-top: .5rem !important;
+    }
+  }
+}
