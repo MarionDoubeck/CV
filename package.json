@@ -1,8 +1,8 @@
 {
-  "name": "react_cv",
+  "name": "CV M. Doubeck",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://mariondoubeck.github.io",
+  "homepage": "https://marion-doubeck.github.io",
   "dependencies": {
     "-": "^0.0.1",
     "@testing-library/jest-dom": "^5.16.1",
